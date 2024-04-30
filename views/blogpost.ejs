@@ -1,9 +1,20 @@
 <%- include("partials/header.ejs") %>
-    <h1>Selected Key and Value</h1>
+    <h1>
+        <%= key %>
+    </h1>
     <div class="container">
-        <p><strong>Key: </strong>
-            <%= key %>
-        </p>
+        <div class="list">
+            <p>Blog posts:</p>
+            <ul>
+                <% Object.entries(newListItem).forEach(([key, value])=> { %>
+                    <li>
+                        <a href="/blogpost?key=<%= key %>">
+                            <%= key %>
+                        </a>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
         <p><strong> Value: </strong>
             <%= value %>
         </p>

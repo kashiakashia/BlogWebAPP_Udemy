@@ -20,7 +20,11 @@ app.get("/blogpost", (req, res) => {
 
   // Retrieve the corresponding value from the JSON data
   const selectedValue = jsonData[selectedKey];
-  res.render("blogpost", { key: selectedKey, value: selectedValue });
+  res.render("blogpost", {
+    key: selectedKey,
+    value: selectedValue,
+    newListItem: jsonData,
+  });
 });
 
 app.post("/submit", (req, res) => {
