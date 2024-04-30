@@ -5,6 +5,17 @@
   <p>Copyright © <%= new Date().getFullYear()%>
   </p>
 </footer>
+<script>
+  function validateForm() {
+    var title = document.querySelector('input[name="post-title"]').value;
+    var blogPost = document.querySelector('textarea[name="blog-post"]').value;
+
+    if (title === undefined || title === '' || blogPost === undefined || blogPost === '') {
+      alert('Please fill in all fields');
+      return false;                       // Prevent form submission
+    }
+  }
+</script>
 </body>
 
 </html>
