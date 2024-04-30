@@ -1,60 +1,146 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
-    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
+  color: #333;
 }
+
+hr {
+  margin-top: 20px;
+  border-color: #ccc;
+}
+
+main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
 footer {
   position: fixed;
-  padding: 0px 5px 5px 5px;
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: 40px;
-  background: green;
-  color: white;
-}
-main {
-  text-align: left;
-  margin: 0 auto;
-}
-ul li {
-  list-style: none;
-  text-indent: -30px;
-  word-wrap: break-word;
-  max-width: 150px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover {
-  color: green;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
+  background-color: #b1b1b1;
+  padding: 5px;
   text-align: center;
+  color: #fff;
+  font-size: 12px;
 }
 
-.main-view {
-  width: fit-content;
+.container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 50px;
-}
-
-.new-post {
-  text-align: center;
-  margin-left: 200px;
+  margin-top: 40px;
 }
 
 .list {
-  text-align: left;
+  flex: 0 0 25%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 25%;
+  overflow-wrap: break-word;
+}
+
+.list p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  text-wrap: wrap;
+  max-height: 200px; /* Set max-height to 200px */
+  overflow-y: auto; /* Add vertical scrollbar when content exceeds max height */
+}
+
+/* Custom scrollbar */
+.list ul::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+.list ul::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+.list ul::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Roundness of the scrollbar thumb */
+}
+
+.list ul::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+.list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-wrap: wrap;
+}
+
+.list a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s ease;
+  text-wrap: wrap;
+}
+
+.list a:hover {
+  color: #4caf50;
+}
+
+.form-container {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-container input[type="submit"] {
+  width: calc(100% + 22px);
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #45a049;
 }

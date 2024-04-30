@@ -1,46 +1,26 @@
 <%- include("partials/header.ejs") %>
-
-
   <h1>Blog Web App ✏️📝</h1>
-  <hr>
-  <div class="main-view">
+
+  <div class="container">
     <div class="list">
       <p>Blog posts:</p>
       <ul>
         <% Object.entries(newListItem).forEach(([key, value])=> { %>
-          <li><strong>
-              <a href="/blogpost?key=<%= key %>">
-                <%= key %>
-              </a>
-            </strong>
-            <hr>
+          <li>
+            <a href="/blogpost?key=<%= key %>">
+              <%= key %>
+            </a>
           </li>
           <% }); %>
       </ul>
     </div>
-    <div class="new-post">
 
-      <% if (locals.newListItem) { %>
-        <h5>
-
-          <p>
-            <% let len=Object.keys(newListItem).length %>
-              <%= Object.keys(newListItem)[len-1] %> added.
-          </p>
-
-        </h5>
-        <% } else { %>
-          <h5>No new post - start writing! 🤟</h5>
-          <% } %>
-
-
-            <form action="/submit" method="POST">
-              <textarea rows="2" cols="50" wrap="physical" name="post-title"></textarea>
-              <textarea rows="20" cols="50" wrap="physical" name="blog-post"></textarea>
-              <input type="submit" value="Add new post">
-
-            </form>
+    <div class="form-container">
+      <form action="/submit" method="POST">
+        <input type="text" placeholder="Title" name="post-title">
+        <textarea placeholder="Enter your post here" name="blog-post"></textarea>
+        <input type="submit" value="Add new post">
+      </form>
     </div>
   </div>
-
   <%- include("partials/footer.ejs") %>
