@@ -26,10 +26,23 @@ app.get("/blogpost", (req, res) => {
 app.post("/submit", (req, res) => {
   const title = req.body["post-title"];
   const blogPost = req.body["blog-post"];
+  const currentDate = new Date().toISOString(); // Generate current date in ISO format
 
-  jsonData[title] = blogPost;
+  // Check if the title already exists in jsonData
+  if (jsonData.hasOwnProperty(title)) {
+    res.send(
+      // remaining in the "/" route
+      "<script>alert('The post with title \"" +
+        title +
+        "\" already exists. Please provide a different title.'); window.location.href = '/';</script>"
+    );
+    return;
+  }
+
+  jsonData[title] = {
+    [currentDate]: blogPost,
+  };
   console.log(jsonData);
-
   res.redirect("/");
 });
 

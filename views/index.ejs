@@ -17,8 +17,8 @@
 
     <div class="form-container">
       <form action="/submit" method="POST" onsubmit="return validateForm()">
-        <input type="text" placeholder="Title" name="post-title">
-        <textarea placeholder="Enter your post here" name="blog-post"></textarea>
+        <input type="text" placeholder="Title" name="post-title" required>
+        <textarea placeholder="Enter your post here" name="blog-post" required></textarea>
         <input type="submit" value="Add new post">
       </form>
     </div>
