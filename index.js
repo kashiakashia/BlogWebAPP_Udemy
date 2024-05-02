@@ -50,6 +50,17 @@ app.post("/submit", (req, res) => {
   res.redirect("/");
 });
 
+app.delete("/deletePost", (req, res) => {
+  const postId = req.body.postId;
+
+  // Implement logic to delete the post with postId from your database or JSON data
+  // Example:
+  deletePostFromDatabase(postId);
+
+  // Respond with success status
+  res.sendStatus(200);
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });

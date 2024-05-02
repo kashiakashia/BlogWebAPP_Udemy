@@ -1,7 +1,5 @@
 <%- include("partials/header.ejs") %>
-    <h1>
-        <%= key %>
-    </h1>
+
     <div class="container">
         <div class="list">
             <p>Blog posts:</p>
@@ -15,13 +13,16 @@
                     <% }); %>
             </ul>
         </div>
-        <div>
+        <div class="blog-post-view">
+            <h4>
+                <%= key %>
+            </h4>
             <% Object.entries(value).forEach(([date, content])=> { %>
-                <div>
-                    <p><strong>Content:</strong>
+                <div class="blog-post">
+                    <p>
                         <%= content %>
                     </p>
-                    <p><strong>Date:</strong>
+                    <p class="post-date"><strong>Date:</strong>
                         <%= date %>
                     </p>
                 </div>

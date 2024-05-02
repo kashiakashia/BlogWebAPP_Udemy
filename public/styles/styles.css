@@ -10,6 +10,10 @@ h1 {
   color: #333;
 }
 
+a {
+  text-decoration: none;
+}
+
 hr {
   margin-top: 20px;
   border-color: #ccc;
@@ -58,6 +62,8 @@ footer {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 25%;
   overflow-wrap: break-word;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
 }
 
 .list p {
@@ -73,6 +79,7 @@ footer {
   text-wrap: wrap;
   max-height: 200px; /* Set max-height to 200px */
   overflow-y: auto; /* Add vertical scrollbar when content exceeds max height */
+  flex-grow: 1; /* Allow the ul to grow and take up remaining space */
 }
 
 /* Custom scrollbar */
@@ -97,6 +104,23 @@ footer {
   margin-bottom: 10px;
   font-size: 16px;
   text-wrap: wrap;
+}
+
+.list li a {
+  position: relative; /* Position relative for positioning the trash icon */
+  display: inline-block; /* Ensure anchor elements behave as blocks */
+}
+
+.list li a:hover::after {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute;
+  top: 50%; /* Position the icon vertically centered */
+  right: -20px; /* Position the icon outside the link */
+  transform: translateY(-50%); /* Center the icon vertically */
+  width: 10px;
+  height: 12px;
+  background-image: url("../icons/trash.svg"); /* Replace 'path_to_your_trash_icon.svg' with the path to your trash bin icon */
+  background-size: cover; /* Ensure the icon covers the specified dimensions */
 }
 
 .list a {
@@ -143,4 +167,33 @@ footer {
 
 .form-container input[type="submit"]:hover {
   background-color: #45a049;
+}
+
+.blog-post-view {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+  padding-left: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  margin-left: 10px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.blog-post-view h4 {
+  text-align: center;
+}
+
+.blog-post {
+  flex-grow: 1; /* Allow the blog-post div to grow and take up remaining space */
+  display: flex; /* Use flexbox for .blog-post */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.post-date {
+  margin-top: auto; /* Push the .post-date to the bottom */
+  font-size: 12px;
 }
