@@ -2,26 +2,15 @@
 
 
   <div class="container">
-    <div class="list">
-      <p>Blog posts:</p>
-      <ul>
-        <% Object.entries(newListItem).forEach(([key, value])=> { %>
-          <li>
-            <a href="/blogpost?key=<%= key %>">
-              <%= key %>
-            </a>
-          </li>
-          <% }); %>
-      </ul>
-    </div>
+    <%- include("partials/list.ejs") %>
 
-    <div class="form-container">
-      <form action="/submit" method="POST" onsubmit="return validateForm()">
-        <input type="text" placeholder="Title" name="post-title" required>
-        <textarea placeholder="Enter your post here" name="blog-post" required></textarea>
-        <input type="submit" value="Add new post">
-      </form>
-    </div>
+      <div class="form-container">
+        <form action="/submit" method="POST" onsubmit="return validateForm()">
+          <input type="text" placeholder="Title" name="post-title" required>
+          <textarea placeholder="Enter your post here" name="blog-post" required></textarea>
+          <input type="submit" value="Add new post">
+        </form>
+      </div>
   </div>
 
   <%- include("partials/footer.ejs") %>

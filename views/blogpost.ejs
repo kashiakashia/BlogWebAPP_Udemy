@@ -1,32 +1,22 @@
 <%- include("partials/header.ejs") %>
 
     <div class="container">
-        <div class="list">
-            <p>Blog posts:</p>
-            <ul>
-                <% Object.entries(newListItem).forEach(([key, value])=> { %>
-                    <li>
-                        <a href="/blogpost?key=<%= key %>">
-                            <%= key %>
-                        </a>
-                    </li>
+        <%- include("partials/list.ejs") %>
+
+            <div class="blog-post-view">
+                <h4>
+                    <%= key %>
+                </h4>
+                <% Object.entries(value).forEach(([date, content])=> { %>
+                    <div class="blog-post">
+                        <p>
+                            <%= content %>
+                        </p>
+                        <p class="post-date"><strong>Date:</strong>
+                            <%= date %>
+                        </p>
+                    </div>
                     <% }); %>
-            </ul>
-        </div>
-        <div class="blog-post-view">
-            <h4>
-                <%= key %>
-            </h4>
-            <% Object.entries(value).forEach(([date, content])=> { %>
-                <div class="blog-post">
-                    <p>
-                        <%= content %>
-                    </p>
-                    <p class="post-date"><strong>Date:</strong>
-                        <%= date %>
-                    </p>
-                </div>
-                <% }); %>
-        </div>
+            </div>
     </div>
     <%- include("partials/footer.ejs") %>

@@ -1,0 +1,13 @@
+<div class="list">
+    <p>Blog posts:</p>
+    <ul>
+        <% Object.entries(newListItem).forEach(([key, value])=> { %>
+            <li>
+                <a href="/blogpost?key=<%= key %>">
+                    <%= key %>
+                        <img src="/icons/trash.svg" alt="Trash Icon"> <!-- Trash icon -->
+                </a>
+            </li>
+            <% }); %>
+    </ul>
+</div>

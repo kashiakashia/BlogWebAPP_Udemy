@@ -106,28 +106,17 @@ footer {
   text-wrap: wrap;
 }
 
-.list li a {
-  position: relative; /* Position relative for positioning the trash icon */
-  display: inline-block; /* Ensure anchor elements behave as blocks */
-}
-
-.list li a:hover::after {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute;
-  top: 50%; /* Position the icon vertically centered */
-  right: -20px; /* Position the icon outside the link */
-  transform: translateY(-50%); /* Center the icon vertically */
-  width: 10px;
-  height: 12px;
-  background-image: url("../icons/trash.svg"); /* Replace 'path_to_your_trash_icon.svg' with the path to your trash bin icon */
-  background-size: cover; /* Ensure the icon covers the specified dimensions */
-}
-
 .list a {
   text-decoration: none;
   color: #666;
   transition: color 0.3s ease;
   text-wrap: wrap;
+}
+
+.list img {
+  width: 15px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  vertical-align: text-bottom; /* Align the icon to the bottom of the text */
 }
 
 .list a:hover {
