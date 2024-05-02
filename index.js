@@ -51,11 +51,12 @@ app.post("/submit", (req, res) => {
 });
 
 app.delete("/deletePost", (req, res) => {
-  const postId = req.body.postId;
+  // Retrieve the selected key from the query parameter
+  const selectedKey = req.query.key;
 
   // Implement logic to delete the post with postId from your database or JSON data
   // Example:
-  deletePostFromDatabase(postId);
+  deletePostFromDatabase(selectedKey);
 
   // Respond with success status
   res.sendStatus(200);
