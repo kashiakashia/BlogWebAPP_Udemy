@@ -77,7 +77,7 @@ footer {
   list-style: none;
   padding: 0;
   text-wrap: wrap;
-  max-height: 200px; /* Set max-height to 200px */
+  max-height: 200px;
   overflow-y: auto; /* Add vertical scrollbar when content exceeds max height */
   flex-grow: 1; /* Allow the ul to grow and take up remaining space */
 }
@@ -114,9 +114,9 @@ footer {
 }
 
 .list img {
-  width: 15px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  vertical-align: text-bottom; /* Align the icon to the bottom of the text */
+  width: 15px;
+  height: auto;
+  vertical-align: text-bottom;
 }
 
 .list a:hover {
@@ -159,8 +159,8 @@ footer {
 }
 
 .blog-post-view {
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack children vertically */
+  display: flex;
+  flex-direction: column;
   padding-left: 20px;
   width: 100%;
   border: 1px solid #ccc;
@@ -168,8 +168,6 @@ footer {
   font-size: 16px;
   background-color: #fff;
   margin-left: 10px;
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack children vertically */
 }
 
 .blog-post-view h4 {

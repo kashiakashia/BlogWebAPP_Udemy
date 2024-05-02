@@ -50,11 +50,38 @@ app.post("/submit", (req, res) => {
   res.redirect("/");
 });
 
-app.get("/deletepost", (req, res) => {
+app.get("/delete", (req, res) => {
   const selectedKey = req.query.key;
   console.log(selectedKey);
   delete jsonData[selectedKey];
 
+  res.redirect("/");
+});
+
+app.get("/edit", (req, res) => {
+  const selectedKey = req.query.key;
+
+  // Retrieve the corresponding value from the JSON data
+  const selectedValue = jsonData[selectedKey];
+
+  res.render("editForm", {
+    key: selectedKey,
+    value: selectedValue,
+    newListItem: jsonData,
+  });
+});
+
+app.post("/update", (req, res) => {
+  const key = req.body.key; // Retrieve the key of the post to update
+  const newTitle = req.body["post-title"];
+  const newContent = req.body["blog-post"];
+
+  // Update the post in the JSON data
+  jsonData[key] = {
+    [new Date().toISOString()]: newContent, // Update the content with the current date
+  };
+
+  // Redirect the user to the main page or wherever you want
   res.redirect("/");
 });
 

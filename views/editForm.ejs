@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") %>
+
+
+    <div class="container">
+        <%- include("partials/list.ejs") %>
+            <!-- Example edit form -->
+            <form action="/update" method="POST">
+                <input type="hidden" name="key" value="<%= key %>"> <!-- Include the key of the post -->
+                <input type="text" name="post-title" value="<%= key %>" required> <!-- Display the current title -->
+                <textarea name="blog-post" required><%= value %></textarea> <!-- Display the current content -->
+                <input type="submit" value="Update post">
+            </form>
+    </div>
+    <%- include("partials/footer.ejs") %>
