@@ -50,16 +50,12 @@ app.post("/submit", (req, res) => {
   res.redirect("/");
 });
 
-app.delete("/deletePost", (req, res) => {
-  // Retrieve the selected key from the query parameter
+app.get("/deletepost", (req, res) => {
   const selectedKey = req.query.key;
+  console.log(selectedKey);
+  delete jsonData[selectedKey];
 
-  // Implement logic to delete the post with postId from your database or JSON data
-  // Example:
-  deletePostFromDatabase(selectedKey);
-
-  // Respond with success status
-  res.sendStatus(200);
+  res.redirect("/");
 });
 
 app.listen(port, () => {
