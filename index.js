@@ -60,13 +60,12 @@ app.get("/delete", (req, res) => {
 
 app.get("/edit", (req, res) => {
   const selectedKey = req.query.key;
-
-  // Retrieve the corresponding value from the JSON data
-  const selectedValue = jsonData[selectedKey];
+  const timestamp = Object.keys(jsonData[selectedKey])[0];
+  const blogpost = jsonData[selectedKey][timestamp];
 
   res.render("editForm", {
     key: selectedKey,
-    value: selectedValue,
+    value: blogpost,
     newListItem: jsonData,
   });
 });
@@ -77,9 +76,13 @@ app.post("/update", (req, res) => {
   const newContent = req.body["blog-post"];
 
   // Update the post in the JSON data
-  jsonData[key] = {
+  jsonData[newTitle] = {
     [new Date().toISOString()]: newContent, // Update the content with the current date
   };
+
+  if (newTitle != key) {
+    delete jsonData[key];
+  }
 
   // Redirect the user to the main page or wherever you want
   res.redirect("/");
